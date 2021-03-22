@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
@@ -10,135 +9,175 @@ namespace Tuan1
     {
         static void Main(string[] args)
         {
-            
-            List<HanhKhach> lstHK = new List<HanhKhach>();
+
+            List<Customer> lstHK = new List<Customer>();
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
-            VeMayBay ve = new VeMayBay("HN-HCM", new DateTime(), 30);
-            HanhKhach hanhKhach = new HanhKhach("Hoàng Lê","Nam",21,ve, 1);
+            TicketAir ve = new TicketAir("HN-HCM", new DateTime(), 30);
+            Customer hanhKhach = new Customer("Hoàng Lê", "Nam", 21, ve, 1);
+            Console.WriteLine(hanhKhach);
             Console.WriteLine("Nhập vào số lượng khách hàng mua vé: ");
             String line = "";
-            line=Console.ReadLine();
+            line = Console.ReadLine();
             int n = int.Parse(line);
-            for(int i = 0;  i < n;i++)
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Nhập thông tin khách hàng thứ "+ (i+1)+": ");
+                Console.WriteLine("Nhập thông tin khách hàng thứ " + (i + 1) + ": ");
                 Console.Write("Họ tên: ");
-                string hoTen = Console.ReadLine(); 
+                string hoTen = Console.ReadLine();
                 Console.Write("Giới tính: ");
-                string gioiTinh = Console.ReadLine(); 
+                string gioiTinh = Console.ReadLine();
                 Console.Write("Tuổi: ");
                 int tuoi = int.Parse(Console.ReadLine());
                 Console.Write("Số lượng vé mua: ");
                 int soLuong = int.Parse(Console.ReadLine());
-                lstHK.Add(new HanhKhach(hoTen, gioiTinh, tuoi, ve, soLuong));
+                lstHK.Add(new Customer(hoTen, gioiTinh, tuoi, ve, soLuong));
 
             }
-            
+
             lstHK.Sort(new SortKhachHang());
-            foreach(HanhKhach h in lstHK)
+            foreach (Customer h in lstHK)
             {
                 Console.WriteLine(h.ToString());
             }
-            
+
 
         }
+
     }
-    public class VeMayBay
+    public class TicketAir
     {
 
-        string tenChuyen { get; set; }
-        DateTime ngayBay { get; set; }
-        public double giaVe { get; set; }
+        public string NameTrip { get; set; }
+        public DateTime DateOfTakeOff { get; set; }
+        public double Price { get; set; }
 
-        public VeMayBay(string tenChuyen, DateTime ngayBay, double giaVe)
+        public TicketAir(string tenChuyen, DateTime ngayBay, double giaVe)
         {
-            this.tenChuyen = tenChuyen;
-            this.ngayBay = ngayBay;
-            this.giaVe = giaVe;
+            this.NameTrip = tenChuyen;
+            this.DateOfTakeOff = ngayBay;
+            this.Price = giaVe;
         }
         public override String ToString()
         {
             Type objType = this.GetType();
-            PropertyInfo[] propertyInfoList = objType.GetProperties();
+            PropertyInfo[] propertyInfoList = objType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
             StringBuilder result = new StringBuilder();
+            result.AppendFormat(objType.Name + "[");
+            bool flag = false;
             foreach (PropertyInfo propertyInfo in propertyInfoList)
-                result.AppendFormat("{0}={1} ", propertyInfo.Name, propertyInfo.GetValue(this));
-
+            {
+                result.AppendFormat("{0}={1}, ", propertyInfo.Name, propertyInfo.GetValue(this));
+                flag = true;
+            }
+            if (flag)
+                result.Remove(result.Length - 2, 1);
+            result.AppendFormat("]");
             return result.ToString();
-        }
-    }
-    public class ConNguoi
-    {
-        public string hoTen { get; set; }
-        public string gioiTinh { get; set; }
-        public int tuoi { get; set; }
 
-        public ConNguoi(string hoTen, string gioiTinh, int tuoi)
+        }
+
+
+
+    }
+    public class Person
+    {
+        public string FullName { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+
+        public Person(string hoTen, string gioiTinh, int tuoi)
         {
-            this.hoTen = hoTen;
-            this.gioiTinh = gioiTinh;
-            this.tuoi = tuoi;
+            this.FullName = hoTen;
+            this.Gender = gioiTinh;
+            this.Age = tuoi;
         }
         public override String ToString()
         {
             Type objType = this.GetType();
-            PropertyInfo[] propertyInfoList = objType.GetProperties();
+            PropertyInfo[] propertyInfoList = objType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
             StringBuilder result = new StringBuilder();
+            result.AppendFormat(objType.Name + "[");
+            bool flag = false;
             foreach (PropertyInfo propertyInfo in propertyInfoList)
-                result.AppendFormat("{0}={1} ", propertyInfo.Name, propertyInfo.GetValue(this));
-
+            {
+                result.AppendFormat("{0}={1}, ", propertyInfo.Name, propertyInfo.GetValue(this));
+                flag = true;
+            }
+            if (flag)
+                result.Remove(result.Length - 2, 1);
+            result.AppendFormat("]");
             return result.ToString();
         }
-    }
-    public class HanhKhach:ConNguoi
-    {
-        VeMayBay ve { get; set; }
-        int soLuong { get; set; }
 
-        public HanhKhach(string hoTen, string gioiTinh, int tuoi,VeMayBay ve, int soLuong) 
-            :base(hoTen, gioiTinh,  tuoi)
+
+    }
+    public class Customer : Person
+    {
+        public TicketAir Ticket { get; set; }
+        public int Count { get; set; }
+
+        public Customer(string hoTen, string gioiTinh, int tuoi, TicketAir ve, int soLuong)
+            : base(hoTen, gioiTinh, tuoi)
         {
-            
-            this.ve = ve;
-            this.soLuong = soLuong;
+
+            this.Ticket = ve;
+            this.Count = soLuong;
         }
 
         public double tongTien()
         {
-            if (this.soLuong > 3)
+            if (this.Count > 3)
             {
-                return this.soLuong* this.ve.giaVe *(100-15) / 100;
+                return this.Count * this.Ticket.Price * (100 - 15) / 100;
             }
-            return this.soLuong * this.ve.giaVe;
+            return this.Count * this.Ticket.Price;
         }
-        public override String ToString()
+        public String ToStringVi()
         {
-            
+
             StringBuilder result = new StringBuilder();
-            
-            result.AppendFormat("Họ và tên: {0},", this.hoTen);
-            result.AppendFormat("Giới tính: {0},", this.gioiTinh);
-            result.AppendFormat("Tuổi: {0},", this.tuoi);
+
+            result.AppendFormat("Họ và tên: {0},", this.FullName);
+            result.AppendFormat("Giới tính: {0},", this.Gender);
+            result.AppendFormat("Tuổi: {0},", this.Age);
             result.AppendFormat("Tổng tiền: {0}", this.tongTien());
 
             return result.ToString();
         }
-    }
-    public class SortKhachHang : IComparer<HanhKhach>
-    {
-        
-            public int Compare(HanhKhach x, HanhKhach y)
+
+        public override String ToString()
         {
-           
+            Type objType = this.GetType();
+            PropertyInfo[] propertyInfoList = objType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+            StringBuilder result = new StringBuilder();
+            result.AppendFormat(objType.Name + "[");
+            bool flag = false;
+            foreach (PropertyInfo propertyInfo in propertyInfoList)
+            {
+                result.AppendFormat("{0}={1}, ", propertyInfo.Name, propertyInfo.GetValue(this));
+                flag = true;
+            }
+            if (flag)
+                result.Remove(result.Length - 2, 1);
+            result.AppendFormat("]");
+            return result.ToString();
+        }
+    }
+    public class SortKhachHang : IComparer<Customer>
+    {
+
+        public int Compare(Customer x, Customer y)
+        {
+
 
             if (x == null || y == null)
             {
                 throw new InvalidOperationException();
             }
-            return (int)((x.tongTien() - y.tongTien())*1000) ;
+            return (int)((x.tongTien() - y.tongTien()) * 1000);
         }
 
-       
+
     }
 }

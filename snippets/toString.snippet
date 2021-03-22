@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+  <CodeSnippet Format="1.0.0"> <!-- format attribute is required -->
+
+    <Header>
+      <!-- 1 -->
+      <Title>To String</Title>
+      <Author>ZHoangZ</Author>
+      <Shortcut>tos</Shortcut>
+      <Description>To String generate</Description>
+    </Header>
+
+    <Snippet> <!-- 2 -->
+
+      
+
+      <Code Language="CSharp"> <!-- 2.4 -->
+        <![CDATA[public override String ToString()
+{
+  Type objType = this.GetType();
+  PropertyInfo[] propertyInfoList = objType.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+  StringBuilder result = new StringBuilder();
+  result.AppendFormat(objType.Name + "[");
+  bool flag = false;
+  foreach (PropertyInfo propertyInfo in propertyInfoList)
+  {
+      result.AppendFormat("{0}={1}, ", propertyInfo.Name, propertyInfo.GetValue(this));
+      flag = true;
+  }
+  if (flag)
+      result.Remove(result.Length - 2, 1);
+  result.AppendFormat("]");
+  return result.ToString();
+}]]>
+      </Code>
+
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

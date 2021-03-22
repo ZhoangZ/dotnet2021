@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuan1", "ConsoleApp\Tuan1.csproj", "{938FB76E-3937-433B-812A-D2DEDFFC2A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tuan1", "ConsoleApp\Tuan1.csproj", "{938FB76E-3937-433B-812A-D2DEDFFC2A36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
