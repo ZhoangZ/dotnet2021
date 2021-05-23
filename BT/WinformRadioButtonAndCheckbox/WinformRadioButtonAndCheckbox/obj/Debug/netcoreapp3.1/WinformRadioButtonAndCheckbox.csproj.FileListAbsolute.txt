@@ -1,0 +1,15 @@
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\bin\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.exe
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\bin\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.deps.json
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\bin\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.runtimeconfig.json
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\bin\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.runtimeconfig.dev.json
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\bin\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.dll
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\bin\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.pdb
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.csprojAssemblyReference.cache
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButton.FormRadioButtonAndCheckbox.resources
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.csproj.GenerateResource.cache
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.AssemblyInfoInputs.cache
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.AssemblyInfo.cs
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.csproj.CoreCompileInputs.cache
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.dll
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.pdb
+D:\Github\DotNet\dotnet2021\BT\WinformRadioButtonAndCheckbox\WinformRadioButtonAndCheckbox\obj\Debug\netcoreapp3.1\WinformRadioButtonAndCheckbox.genruntimeconfig.cache

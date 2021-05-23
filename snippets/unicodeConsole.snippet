@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+  <CodeSnippet Format="1.0.0"> <!-- format attribute is required -->
+
+    <Header>
+      <!-- 1 -->
+      <Title>Console Unicode</Title>
+      <Author>ZHoangZ</Author>
+      <Shortcut>cuni</Shortcut>
+      <Description>Console Unicode</Description>
+    </Header>
+
+    <Snippet> <!-- 2 -->
+
+      
+
+      <Code Language="CSharp"> <!-- 2.4 -->
+        <![CDATA[Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;]]>
+      </Code>
+      <Imports>
+        <Import>
+            <Namespace>System.Text</Namespace>         
+        </Import>
+      </Imports>
+
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>
